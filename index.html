@@ -1,115 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Warning to Rutuja 😌</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      color: #333;
-    }
+<meta charset="UTF-8">
+<title>Restricted Access ⚠️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .card {
-      background: white;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      text-align: center;
-      max-width: 400px;
-      transition: 0.3s;
-    }
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at center, #0f0f0f, #000000);
+    color: #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
 
-    h1 {
-      color: #ff4d6d;
-    }
+  /* flicker effect */
+  body::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.02),
+      rgba(255,255,255,0.02) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    pointer-events: none;
+  }
 
-    button {
-      margin-top: 20px;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 10px;
-      background: #ff4d6d;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
+  .card {
+    background: rgba(20,20,20,0.9);
+    border: 1px solid rgba(255,0,0,0.3);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 420px;
+    box-shadow: 0 0 25px rgba(255,0,0,0.2);
+    animation: fadeIn 1s ease;
+  }
 
-    button:hover {
-      background: #ff1e4d;
-      transform: scale(1.05);
-    }
+  h1 {
+    color: #ff3b3b;
+    letter-spacing: 1px;
+  }
 
-    .hidden {
-      display: none;
-      margin-top: 20px;
-      font-weight: bold;
-      color: #444;
-    }
-  </style>
+  p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .badge {
+    margin: 15px 0;
+    padding: 6px 12px;
+    border: 1px solid #444;
+    display: inline-block;
+    font-size: 12px;
+    color: #bbb;
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #ff3b3b;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    transform: scale(1.1);
+    background: #ff0000;
+    box-shadow: 0 0 15px red;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .final {
+    margin-top: 20px;
+    color: #ccc;
+    font-weight: bold;
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+</style>
 </head>
+
 <body>
 
-  <div class="card">
-    <h1>⚠️ Dear Rutuja ⚠️</h1>
+<div class="card">
+  <h1>⚠️ ACCESS NOTICE</h1>
+  <p>
+    Identity Detected: <b>Rutuja</b><br>
+    Status: <span style="color: lightgreen;">Bestie ✔️</span>
+  </p>
+
+  <div class="badge">System Scan Complete</div>
+
+  <button onclick="step1()">Proceed 👁️</button>
+
+  <div id="step1" class="hidden">
     <p>
-      This is a sweet but serious message 😌  
-      You are amazing… BUT…
-    </p>
-
-    <button onclick="showMessage()">Click to Continue 👀</button>
-
-    <p id="msg1" class="hidden">
-      You can hug her 🤗  
-      You can laugh with her 😂  
-      You can steal her snacks 🍫  
-    </p>
-
-    <p id="msg2" class="hidden">
-      But certain things…  
-      are under <b>exclusive premium membership</b> 😏
-    </p>
-
-    <p id="msg3" class="hidden">
-      And guess what…  
-      I own that membership 💀❤️
-    </p>
-
-    <button id="finalBtn" class="hidden" onclick="finalMessage()">
-      Accept Terms & Conditions 😌
-    </button>
-
-    <p id="finalMsg" class="hidden">
-      Approved as Bestie ✔️  
-      Just stay in your lane 😇  
-      Or consequences include… me staring at you silently 😐  
+      Permissions Granted:
+      <br>✔️ Laugh Access  
+      <br>✔️ Hug Access  
+      <br>✔️ Snack Theft Rights  
     </p>
   </div>
 
-  <script>
-    function showMessage() {
-      document.getElementById("msg1").classList.remove("hidden");
+  <div id="step2" class="hidden">
+    <p>
+      Restricted Zone Detected ⚠️  
+      <br>
+      Some privileges are classified as  
+      <b>High-Level Exclusive Access</b>
+    </p>
+  </div>
 
-      setTimeout(() => {
-        document.getElementById("msg2").classList.remove("hidden");
-      }, 1000);
+  <div id="step3" class="hidden">
+    <p>
+      Ownership: <b>Rahil</b>  
+      <br>
+      Unauthorized access will trigger…
+    </p>
+  </div>
 
-      setTimeout(() => {
-        document.getElementById("msg3").classList.remove("hidden");
-        document.getElementById("finalBtn").classList.remove("hidden");
-      }, 2000);
-    }
+  <div id="step4" class="hidden">
+    <p>
+      👁️ Continuous Monitoring  
+      <br>⚠️ Silent Judgment  
+      <br>😐 Awkward Energy Shift  
+    </p>
+  </div>
 
-    function finalMessage() {
-      document.getElementById("finalMsg").classList.remove("hidden");
-    }
-  </script>
+  <button id="finalBtn" class="hidden" onclick="finalStep()">
+    Accept Terms 😌
+  </button>
+
+  <div id="final" class="hidden final">
+    ✔️ Agreement Logged  
+    <br><br>
+    Continue being an elite bestie 😇  
+    <br>
+    Maintain boundaries… or system will remember.
+  </div>
+
+</div>
+
+<script>
+function step1() {
+  document.getElementById("step1").classList.remove("hidden");
+
+  setTimeout(() => {
+    document.getElementById("step2").classList.remove("hidden");
+  }, 1000);
+
+  setTimeout(() => {
+    document.getElementById("step3").classList.remove("hidden");
+  }, 2000);
+
+  setTimeout(() => {
+    document.getElementById("step4").classList.remove("hidden");
+    document.getElementById("finalBtn").classList.remove("hidden");
+  }, 3000);
+}
+
+function finalStep() {
+  document.getElementById("final").classList.remove("hidden");
+}
+</script>
 
 </body>
 </html>
